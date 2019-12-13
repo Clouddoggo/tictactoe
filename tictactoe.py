@@ -57,7 +57,11 @@ def getInput():
         while (True):
             print(f'Player {user} please enter a board position from 1 to 9:')
             number = input('')
-            number = int(number)
+            try:
+                number = int(number)
+            except ValueError:
+                print('Please enter a number.')
+                continue
             if (number < 1 or number > 9):
                 print('Sorry, that was an invalid number!')
                 continue
