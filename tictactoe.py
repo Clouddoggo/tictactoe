@@ -2,7 +2,7 @@ import os
 import sys
 
 # board = ['' for x in range(9)]
-board = ['', '', '', '', '', '', '', '', '']
+board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 clear = lambda: os.system('cls')
 
 def findWinner(ls):
@@ -20,7 +20,7 @@ def findWinner(ls):
 
 def clearBoard():
     global board
-    board = ['', '', '', '', '', '', '', '', '']
+    board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
 def displayBoard(ls):
     print('Board positions:')
@@ -65,7 +65,7 @@ def getInput():
             if (number < 1 or number > 9):
                 print('Sorry, that was an invalid number!')
                 continue
-            elif (board[number - 1] != ''):
+            elif (board[number - 1] != ' '):
                 print('This space has been used.')
                 continue
             else:
