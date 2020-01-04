@@ -2,25 +2,25 @@ import os
 import sys
 
 # board = ['' for x in range(9)]
-board = ['', '', '', '', '', '', '', '', '']
+board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 clear = lambda: os.system('cls')
 
 def findWinner(ls):
     for i in range(0, len(ls) - 2, 3):
-        if (ls[i] == board[i + 1] == ls[i + 2] and ls[i] != ''):
+        if (ls[i] == board[i + 1] == ls[i + 2] and ls[i] != ' '):
             return ls[i]
     for i in range(3):
-        if (ls[i] == ls[i + 3] == ls[i + 6] and ls[i] != ''):
+        if (ls[i] == ls[i + 3] == ls[i + 6] and ls[i] != ' '):
             return ls[i]
-    if ((ls[0] == ls[4] == ls[8] and ls[0] != '') or 
-        (ls[2] == ls[4] == ls[6] and ls[2] != '')):
+    if ((ls[0] == ls[4] == ls[8] and ls[0] != ' ') or 
+        (ls[2] == ls[4] == ls[6] and ls[2] != ' ')):
         return ls[4]
     return 'tie'
         
 
 def clearBoard():
     global board
-    board = ['', '', '', '', '', '', '', '', '']
+    board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
 def displayBoard(ls):
     print('Board positions:')
@@ -65,7 +65,7 @@ def getInput():
             if (number < 1 or number > 9):
                 print('Sorry, that was an invalid number!')
                 continue
-            elif (board[number - 1] != ''):
+            elif (board[number - 1] != ' '):
                 print('This space has been used.')
                 continue
             else:
